@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="0" failures="0" hostname="MacServer.private" name="com.lmc.loan.AccountsControllerTests" tests="1" time="1.182" timestamp="2011-07-05T00:19:27">
+  <properties />
+  <testcase classname="com.lmc.loan.AccountsControllerTests" name="testSomething" time="1.122" />
+  <system-out><![CDATA[--Output from testSomething--
+]]></system-out>
+  <system-err><![CDATA[--Output from testSomething--
+]]></system-err>
+</testsuite>
