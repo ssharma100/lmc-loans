@@ -93,10 +93,5 @@
                 </ul>
             </div>
         </div>
-      <div id="footer">
-        <span>
-          <g:render template="/common/footer"/>
-        </span>
-      </div>
     </body>
 </html>
