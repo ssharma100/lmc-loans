@@ -14,10 +14,9 @@
   <div id="topbar">
     <g:render template="/common/topbar" />
   </div>
-  Nothing goes here.
-<g:layoutBody />
-<div id="footer">
-  <g:render template="/common/footer"/>
-</div>
+  <g:layoutBody />
+  <div id="footer">
+    <g:render template="/common/footer"/>
+  </div>
 </body>
 </html>

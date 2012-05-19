@@ -80,7 +80,8 @@ input:focus, select:focus, textarea:focus {
 }
 
 .menuButton {
-    font-size: 10px;
+    font-size: 13px;
+    font-weight: bold;
     padding: 0 5px;
 }
 .menuButton a {
