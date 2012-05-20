@@ -1,0 +1,8 @@
+# Specifically For MAC Based Directories
+.DS_Store
+
+# Secured Information In DataSource
+DataSource.groovy
+
+# Don't Commit/Track The target/ Output Directory
+target/*
