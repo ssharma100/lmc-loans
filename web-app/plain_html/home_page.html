@@ -20,7 +20,28 @@
   <div class="TabbedPanelsContentGroup">
     <div class="TabbedPanelsContent">
       <p class="menuButton">Account Manager</p>
-      <p>Select Account Search Criteria And Click Search</p>
+      <p>Select Account Search Criteria And Click Search:</p>
+      <form action="handleBasicSearch">
+      <table width="175" border="0">
+        <tr>
+          <td>First Name:</td>
+          <td><input type="text" name="acctFirstName" id="acctFirstName" maxlength="35" size="12" /></td>
+        </tr>
+        <tr>
+          <td>Last Name:</td>
+          <td><input type="text" name="acctFirstLast" id="acctFirstName" maxlength="35" size="12"/></td>
+        </tr>
+        <tr>
+          <td>City, Zip</td>
+          <td><input type="text" name="acctCity" id="acctFirstName" maxlength="35" size="10" />, <input type="text" name="acctZip" id="acctFirstName" maxlength="5"  size="5"/></td>
+        </tr>
+        <tr>
+          <td>Account No.</td>
+          <td><input name="acctNo" type="text" id="acctFirstName" size="3" maxlength="3" /></td>
+        </tr>
+      </table>
+      <p>&nbsp;</p>
+      </form>
     </div>
     <div class="TabbedPanelsContent">Loan Information</div>
     <div class="TabbedPanelsContent">Content 3</div>
