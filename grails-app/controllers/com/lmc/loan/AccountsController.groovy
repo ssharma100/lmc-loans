@@ -1,7 +1,11 @@
 package com.lmc.loan
 
 class AccountsController {
-
-    def scaffold = com.lmc.loan.domains.AccountInfo
+    List accts
+    def scaffold = com.lmc.loan.domains.Accounts
     
+    def handleSearch = {
+        accts = com.lmc.loan.domains.Accounts.list()
+        render(view: "summaryResults")
+    }
 }

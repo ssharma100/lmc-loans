@@ -5,6 +5,8 @@ class Transactions {
         id column:'TrxId'
         version column:'Updated'
     }
+
+    static belongsTo = [simpleInterestLoan: SimpleInterestLoan]
     static constraints = {
     }
 

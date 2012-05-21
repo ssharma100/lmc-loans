@@ -1,6 +1,6 @@
 package com.lmc.loan
 
-class TransactionController {
+class TransactionsController {
 
     def scaffold = com.lmc.loan.domains.Transactions
     

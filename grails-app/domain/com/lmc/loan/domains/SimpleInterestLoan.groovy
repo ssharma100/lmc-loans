@@ -1,10 +1,6 @@
 package com.lmc.loan.domains
 
-class SiLoaninfo {
-    static mapping = {
-        id column:'LoanNo'
-        version false
-    }
+class SimpleInterestLoan {
     static constraints = {
     }
 

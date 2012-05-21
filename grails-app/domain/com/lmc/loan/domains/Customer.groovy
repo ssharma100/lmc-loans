@@ -1,15 +1,14 @@
 package com.lmc.loan.domains
 
 class Customer {
-    static mapping = {
-        id column:'Pk'
-        version false
 
-    }
     static constraints = {
     }
 
-    int pk;
+    // One-To-One Mapping Of Domain
+    Accounts accounts;
+    SimpleInterestLoan loan;
+
     String first;
     String middle;
     String last;
