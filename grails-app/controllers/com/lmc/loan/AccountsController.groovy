@@ -8,4 +8,7 @@ class AccountsController {
         accts = com.lmc.loan.domains.Accounts.list()
         render(view: "summaryResults")
     }
+    
+    def showAddScreen = {
+    }
 }

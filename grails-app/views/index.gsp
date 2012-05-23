@@ -107,7 +107,10 @@
               </tr>
             </table>
             <p>&nbsp;</p>
-            <p><input type="submit" value="Submit" /></p>
+            <p>
+              <input type="submit" value="Submit" /> &nbsp;
+              <g:link url="[controller:'accounts',action:'addAccount']" >Add Account</g:link>
+            </p>
           </g:form>
         </div>
         <div class="TabbedPanelsContent">Loan Information</div>
