@@ -11,7 +11,7 @@
     <table>
       <tr>
         <td><g:link action="showAddScreen">Add Account</g:link></td>
-        <td>&nbsp;</td>
+        <td><a href="<g:resource dir='/' file='' absolute="true" />">Home</a></td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td>Help</td>
