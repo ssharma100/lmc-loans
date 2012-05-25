@@ -4,7 +4,7 @@ class SimpleInterestLoan {
     static constraints = {
     }
 
-    int Loanno;
+    int loanno;
     float percentagerate;
     int annualdays;
     int loanterm;

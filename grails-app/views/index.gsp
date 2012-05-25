@@ -1,3 +1,4 @@
+<%@ page import="com.lmc.loan.domains.SimpleInterestLoan" %>
 <html>
   <head>
     <title>Litespeed BHPH Loan Manager</title>
@@ -114,7 +115,37 @@
           </g:form>
         </div>
         <div class="TabbedPanelsContent">Loan Information</div>
-        <div class="TabbedPanelsContent">Content 3</div>
+        <div class="TabbedPanelsContent">
+          <p class="menuButton">Transaction Management</p>
+          <p>Select Transaction Search Criteria And Click Search:</p>
+          <g:form name="trxSearchForm" url="[controller:'transactions',action:'handleSearch']" >
+            <table width="175" border="0">
+              <tr>
+                <td>Loan No:</td>
+                <td>
+                  <g:select name="loanno" from="${SimpleInterestLoan.list()}" optionKey="loanno" optionValue="loanno"></g:select>
+                </td>
+              </tr>
+              <tr>
+                <td>Last Name:</td>
+                <td><input type="text" name="acctFirstLast" id="acctFirstName" maxlength="35" size="12"/></td>
+              </tr>
+              <tr>
+                <td>City, Zip</td>
+                <td><input type="text" name="acctCity" id="acctFirstName" maxlength="35" size="10" />, <input type="text" name="acctZip" id="acctFirstName" maxlength="5"  size="5"/></td>
+              </tr>
+              <tr>
+                <td>Account No.</td>
+                <td><input name="acctNo" type="text" id="acctFirstName" size="3" maxlength="3" /></td>
+              </tr>
+            </table>
+            <p>&nbsp;</p>
+            <p>
+              <input type="submit" value="Submit" /> &nbsp;
+              <g:link url="[controller:'accounts',action:'addAccount']" >Add Account</g:link>
+            </p>
+          </g:form>
+        </div>
       </div>
     </div>
     <p>&nbsp;</p>
