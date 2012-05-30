@@ -7,10 +7,13 @@
     <meta name="layout" content="main" />
   </head>
   <body>
-    <h1>Transaction Search Summary</h1>
+    <h1>Transaction Search Results</h1>
     <table>
       <tr>
-        <td><g:link action="showAddScreen">Add Transaction</g:link></td>
+        <td><g:link action="handleAdd" params="[loanno: flash.loanno]">
+            Add Transaction
+            </g:link>
+        </td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
@@ -22,20 +25,20 @@
     <table style="width: 800px">
       <th style="width: 10px; text-align: center">Trx ID</th>
       <th style="width: 60px; text-align: center">Date</th>
-      <th style="width: 30px; text-align: center">No.</th>
-      <th style="width: 30px; text-align: center">Paid</th>
-      <th style="width: 50px; text-align: center">Due</th>
-      <th style="width: 30px; text-align: center">Int Days</th>
-      <th style="width: 50px; text-align: center">Int Due</th>
+      <th style="width: 5px; text-align: center">No.</th>
+      <th style="width: 20px; text-align: center">Paid</th>
+      <th style="width: 20px; text-align: center">Due</th>
+      <th style="width: 5px; text-align: center">Days</th>
+      <th style="width: 50px; text-align: center">Interest</th>
       <g:each var="trx" in="${trxs}">
         <tr>
           <td>${trx.trxid}</td>
           <td>${trx.paymentdate}</td>
           <td>${trx.seqno}</td>
-          <td>${trx.amtpaid}</td>
-          <td>${trx.amtdue}</td>
+          <td>&#36;${trx.amtpaid}</td>
+          <td>&#36;${trx.amtdue}</td>
           <td>${trx.interestdays}</td>
-          <td>${trx.interestdue}</td>
+          <td>&#36;${trx.interestdue}</td>
         </tr>
       </g:each>
     </table>
