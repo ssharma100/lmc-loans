@@ -14,8 +14,10 @@ class TransactionsController {
     def handleAdd = {
         def loan = com.lmc.loan.domains.SimpleInterestLoan.findByLoanno(params.loanno)
         // Figure The Current Value For Loan Payment - Pre-Calc What Can Be Done
-        
-        render(view: "showAddScreen", model: [simpleinterestloan: loan])
+        // Find The Last Transaction
+        def trx = com.lmc.loan.domains.Transactions.find("from Transactions as tx where tx.loanno='" + params.loanno + "' order by tx.seqno desc limit 1")
+        println ("Current Sequence: " + trx.seqno)
+        render(view: "showAddScreen", model: [simpleinterestloan: loan, lasttrx: trx])
     }
 
 }

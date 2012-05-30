@@ -28,9 +28,14 @@
           
           <table style="width: 450px;">
             <tr><td>Date</td><td><g:datePicker name="paymentdate" value="${new Date()}" precision="day" noSelection="['':'-']"/></td></tr>
-            <tr><td>Payment</td><td>&#36; <g:textField name="antpaid" value="${myValue}" maxlength="7" size="7" /></td></tr>
-            <tr><td>Amount Due Day</td><td>${simpleinterestloan.amountdue}</td></tr>
-            <tr><td>Percentage</td><td>${simpleinterestloan.percentagerate}%</td></tr>
+            <tr><td>Payment</td><td>&#36; <g:textField name="amtpaid" value="" maxlength="7" size="7" /></td></tr>
+
+            <tr><td>Additional Fees</td><td>&#36; <g:textField name="feespaid" value="" maxlength="7" size="7" /></td></tr>
+            <tr><td>Late Fee</td><td>&#36; <g:textField name="latepaid" value="" maxlength="7" size="7" /></td></tr>
+            <tr><td>Interest Paid</td><td>&#36; <g:textField name="interestdue" value="" maxlength="7" size="7" /></td></tr>
+            <tr><td>Total Payment</td><td>&#36; <g:textField name="total" value="0.00" readonly="readonly" maxlength="7" size="7" /></td></tr>
+            <tr><td>Principal Remain</td><td>&#36; ${lasttrx.principalremain}</td></tr>
+            <tr><td>Principal Change</td><td>&#36; 0.00</td></tr>
             <tr><td><input type="submit" value="Add" /></td><td>&nbsp;</td></tr>
           </table>
         </td>
