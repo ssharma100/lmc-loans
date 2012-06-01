@@ -57,7 +57,7 @@ function updateInterestDays() {
     var month = parseInt (selectMonth.value);
     var year = parseInt (selectYear.value);
     
-    var lastDate = new Date(document.getElementById("lastTrxDate"));
+    var lastDate = new Date(document.getElementById("lastTrxDate").value);
     var currDate = new Date(year, month, day, 00, 00, 00,00);
     // Compute Differential In Date
     var oneDay=1000*60*60*24
@@ -72,30 +72,33 @@ function updateInterestDays() {
     var interestDays = document.getElementById("interestdays");
     interestDays.value = diffInDates;
       
-    updateLatePayment(diffInDates);
+    updateLatePayment(currDate);
     return(diffInDates);
 }
 /**
  * Computes the late payment amounts right
  * after the current payment date is determined.
  */
-function updateLatePayment(paymentDays) {
-    
-    if (paymentDays == null || paymentDays == -1) {
-        return;
-    }
+function updateLatePayment(currDate) {
     
     var graceperiod = parseInt (document.getElementById("allowance").value);
     var due = document.getElementById("amtdue").value;
     var latePercentage = document.getElementById("latepercentage").value;
+    var dueDay = document.getElementById("dueDay").value;
     var lateFee = due * (latePercentage/100);
     
-    if (paymentDays > graceperiod) {
+    var milisecPerDay = 86400000;
+    var expectedDate = new Date(currDate);
+    expectedDate.setDate(dueDay);
+    var latestDateAllowed = new Date(expectedDate.getTime() + (milisecPerDay * graceperiod));
+    
+    
+    if (currDate>latestDateAllowed) {
         // Compute The Late Fee:
-        alert("Payment Exceed Grace Priod Of  " + graceperiod + " Days. Fee: " + lateFee);
+        alert ("Latest Expected Payment Date: " + latestDateAllowed + " Fee: " + lateFee);
         document.getElementById("latepaid").value = lateFee;
     }
     else {
-        alert ("No Late Fee/Penalty");
+        alert ("Latest Expected Payment Date: " + latestDateAllowed + "\nNo Late Fee/Penalty");
     }
 }

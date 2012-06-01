@@ -199,7 +199,8 @@
       <tr><td>Principal Change</td><td>&#36; <g:textField name="principalchange" value="0.00" readonly="readonly" maxlength="7" size="7" /></td></tr>
       <tr><td><input type="submit" value="Add" /></td><td>&nbsp;</td></tr>
       <!-- Hidden Fields For Handling Of The -->
-      <input type="hidden" name="lastTrxDate" value="${lasttrx.paymentdate}" />
+      <input type="hidden" id="lastTrxDate" name="lastTrxDate" value="${lasttrx.paymentdate}" />
+      <input type="hidden" id="dueDay" name="dueDay" value="${simpleinterestloan.dueday}" />      
       <input type="hidden" id="allowance" name="allowance" value="${simpleinterestloan.gracedays}" />
       <input type="hidden" id="latepercentage" name="latepercentage" value="${simpleinterestloan.latepenalty}" />
       <input type="hidden" id="amtdue" name="amtdue" value="${simpleinterestloan.amountdue}" />
