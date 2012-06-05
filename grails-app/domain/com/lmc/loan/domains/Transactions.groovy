@@ -2,23 +2,23 @@ package com.lmc.loan.domains
 
 class Transactions {
     static mapping = {
-        id column:'TrxId'
+        id name: 'trxid', generator: 'increment', column: 'TrxId'
         version column:'Updated'
     }
 
-    static belongsTo = [simpleInterestLoan: SimpleInterestLoan]
+    static belongsTo = [loanno: SimpleInterestLoan]
     static constraints = {
     }
 
     Long trxid;
-    int loanno;
-    int customerpk;
-    int seqno;
+    int  loanno;
+    int  customerpk;
+    int  seqno;
     Date paymentdate;
     float amtpaid;
     float amtdue;
     float interestdue;
-    int interestdays;
+    int   interestdays;
     float principalremain;
     float principalchange;
 }

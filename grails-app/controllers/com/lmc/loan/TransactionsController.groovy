@@ -12,12 +12,32 @@ class TransactionsController {
     }
 
     def handleAdd = {
+        def currentSeqNo = params.lastTrxSeq
+        println ("Current Sequence: " + currentSeqNo)
+        def transaction = new com.lmc.loan.domains.Transactions(
+            loanno: params.loanno, 
+            seqno: currentSeqNo.next(),
+            paymentdate: new Date().parse("yyyy/MM/dd", params.paymentdate_year + "/" + params.paymentdate_month + "/" + params.paymentdate_day),
+            trxid: new Date().getTime(),
+            interestdays: params.interestdays,
+            amtpaid: params.amtpaid
+        )
+        if (!transaction.save(flush: true, insert: true)) {
+            transaction.errors.each {
+                println it
+            }
+        }
+        
+        trxs = com.lmc.loan.domains.Transactions.findAllByLoanno(params.loanno)
+        flash.loanno = params.loanno
+        render(view: "summaryResults")
+    }
+
+    def prepareAdd = {
         def loan = com.lmc.loan.domains.SimpleInterestLoan.findByLoanno(params.loanno)
         // Figure The Current Value For Loan Payment - Pre-Calc What Can Be Done
         // Find The Last Transaction
         def trx = com.lmc.loan.domains.Transactions.find("from Transactions as tx where tx.loanno='" + params.loanno + "' order by tx.seqno desc limit 1")
-        println ("Current Sequence: " + trx.seqno)
         render(view: "showAddScreen", model: [simpleinterestloan: loan, lasttrx: trx])
     }
-
 }

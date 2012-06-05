@@ -10,7 +10,7 @@
     <h1>Transaction Search Results</h1>
     <table>
       <tr>
-        <td><g:link action="handleAdd" params="[loanno: flash.loanno]">
+        <td><g:link action="prepareAdd" params="[loanno: flash.loanno]">
             Add Transaction
             </g:link>
         </td>
