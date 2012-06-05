@@ -7,6 +7,7 @@ function updateAllWithPaidAmount(principalRemain, percentageRate, yearDays) {
     var interestDays = document.getElementById("interestdays").value;
     var interest = computeSIInterest(principalRemain, interestDays, percentageRate, yearDays);
     var interestPaid = document.getElementById("interestdue");
+    var pRemain = document.getElementById("principalreamain");
     interestPaid.value = interest;
     // Update Principal
     var pChange = document.getElementById("principalchange");
@@ -23,6 +24,9 @@ function updateAllWithPaidAmount(principalRemain, percentageRate, yearDays) {
         // Remaining Value Increases Principal
         pChange.value = abs(effect);
     }
+    
+    // Update The Remaining Principal
+    pRemain.value = pRemainValue + pChange.value;
 }
 
 /*

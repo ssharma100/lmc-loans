@@ -8,6 +8,7 @@ class Transactions {
 
     static belongsTo = [loanno: SimpleInterestLoan]
     static constraints = {
+        seqno unique: 'loanno'
     }
 
     Long trxid;

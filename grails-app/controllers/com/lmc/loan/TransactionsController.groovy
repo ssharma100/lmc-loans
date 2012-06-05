@@ -13,14 +13,21 @@ class TransactionsController {
 
     def handleAdd = {
         def currentSeqNo = params.lastTrxSeq
-        println ("Current Sequence: " + currentSeqNo)
+        println ("Adding Payment Sequence: " + currentSeqNo.next() +
+            " InterestDays: " + params.interestdays + 
+            " InterestDue: " + params.interestdue +
+            " Principal Remain: " + params.principalreamain)
         def transaction = new com.lmc.loan.domains.Transactions(
             loanno: params.loanno, 
             seqno: currentSeqNo.next(),
-            paymentdate: new Date().parse("yyyy/MM/dd", params.paymentdate_year + "/" + params.paymentdate_month + "/" + params.paymentdate_day),
+            paymentdate: new Date().parse("yyyy/MM/dd", params.paymentdate_year + "/" + (params.paymentdate_month + 1) + "/" + params.paymentdate_day),
             trxid: new Date().getTime(),
             interestdays: params.interestdays,
-            amtpaid: params.amtpaid
+            amtpaid: params.amtpaid,
+            amtdue: params.amtdue,
+            interestdue: params.interestdue,
+            principalremain: params.principalreamain,
+            princiaplchange: params.principalchange
         )
         if (!transaction.save(flush: true, insert: true)) {
             transaction.errors.each {

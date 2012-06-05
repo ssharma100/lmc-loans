@@ -112,8 +112,10 @@
       <tr><td>Interest Paid</td><td>&#36; <g:textField name="interestdue" value="" maxlength="7" size="7" /></td></tr>
       <tr><td>Interest Days</td><td>&nbsp; &nbsp;<g:textField name="interestdays" value="0" readonly="readonly" maxlength="7" size="7" /></td></tr>
 
-      <tr><td>Principal Remain</td><td>&#36; ${lasttrx.principalremain}</td></tr>
+      <tr><td>Principal Current</td><td>&#36; ${lasttrx.principalremain}</td></tr>
       <tr><td>Principal Change</td><td>&#36; <g:textField name="principalchange" value="0.00" readonly="readonly" maxlength="7" size="7" /></td></tr>
+      <tr><td>Principal Remain</td><td>&#36; <g:textField name="principalreamain" value="${lasttrx.principalremain}" maxlength="7" size="7" /></td></tr>
+      
       <tr><td><input type="submit" value="Add" /></td><td>&nbsp;</td></tr>
       <!-- Hidden Fields For Handling Of The -->
       <input type="hidden" id="lastTrxDate" name="lastTrxDate" value="${lasttrx.paymentdate}" />

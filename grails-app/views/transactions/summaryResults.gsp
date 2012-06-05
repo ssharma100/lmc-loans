@@ -14,7 +14,11 @@
             Add Transaction
             </g:link>
         </td>
-        <td>&nbsp;</td>
+        <td>
+          <g:link action="prepareAdd" params="[loanno: flash.loanno]">
+            Refresh
+          </g:link>
+        </td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td>Help</td>
