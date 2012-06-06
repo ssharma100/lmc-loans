@@ -110,7 +110,7 @@
             <p>&nbsp;</p>
             <p>
               <input type="submit" value="Submit" /> &nbsp;
-              <g:link url="[controller:'accounts',action:'addAccount']" >Add Account</g:link>
+              <g:link url="[controller:'accounts',action:'prepareAdd']" >Add Account</g:link>
             </p>
           </g:form>
         </div>

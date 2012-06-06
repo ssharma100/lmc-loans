@@ -10,6 +10,12 @@ class AccountsController {
         render(view: "summaryResults", model: [accountList: accts])
     }
     
-    def showAddScreen = {
+    def handleAdd = {
+        
     }
+    
+    def prepareAdd = {
+        render(view: "showAddScreen")
+    }
+    
 }
