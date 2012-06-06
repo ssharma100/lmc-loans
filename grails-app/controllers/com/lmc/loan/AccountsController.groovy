@@ -9,6 +9,12 @@ class AccountsController {
         render(view: "summaryResults")
     }
     
-    def showAddScreen = {
+    def handleAdd = {
+        
     }
+    
+    def prepareAdd = {
+        render(view: "showAddScreen")
+    }
+    
 }
