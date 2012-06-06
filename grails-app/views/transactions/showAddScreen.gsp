@@ -70,18 +70,18 @@
               </select>
               <select name="paymentdate_month" id="paymentdate_month"  onchange="javascript:updateInterestDays()">
                 <option value="" selected="selected">-</option>
-                <option value="0">January</option>
-                <option value="1">February</option>
-                <option value="2">March</option>
-                <option value="3">April</option>
-                <option value="4">May</option>
-                <option value="5">June</option>
-                <option value="6">July</option>
-                <option value="7">August</option>
-                <option value="8">September</option>
-                <option value="9">October</option>
-                <option value="10">November</option>
-                <option value="11">December</option>
+                <option value="1">January</option>
+                <option value="2">February</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
               </select>
               <select name="paymentdate_year" id="paymentdate_year"  onchange="javascript:updateInterestDays()">
                 <option value="2012" selected="selected">2012</option>
@@ -114,12 +114,13 @@
 
       <tr><td>Principal Current</td><td>&#36; ${lasttrx.principalremain}</td></tr>
       <tr><td>Principal Change</td><td>&#36; <g:textField name="principalchange" value="0.00" readonly="readonly" maxlength="7" size="7" /></td></tr>
-      <tr><td>Principal Remain</td><td>&#36; <g:textField name="principalreamain" value="${lasttrx.principalremain}" maxlength="7" size="7" /></td></tr>
+      <tr><td>Principal Remain</td><td>&#36; <g:textField name="principalremain" value="${lasttrx.principalremain}" maxlength="7" size="7" /></td></tr>
+      <tr><td>Payment No.</td><td>${lasttrx.seqno.next()}</td></tr>
       
       <tr><td><input type="submit" value="Add" /></td><td>&nbsp;</td></tr>
       <!-- Hidden Fields For Handling Of The -->
       <input type="hidden" id="lastTrxDate" name="lastTrxDate" value="${lasttrx.paymentdate}" />
-      <input type="hidden" id="lastTrxSeq" name="lastTrxSeq" value="${lasttrx.seqno}" />
+      <input type="hidden" id="seqNo" name="seqNo" value="${lasttrx.seqno.next()}" />
       <input type="hidden" id="dueDay" name="dueDay" value="${simpleinterestloan.dueday}" />      
       <input type="hidden" id="allowance" name="allowance" value="${simpleinterestloan.gracedays}" />
       <input type="hidden" id="latepercentage" name="latepercentage" value="${simpleinterestloan.latepenalty}" />

@@ -7,10 +7,10 @@ function updateAllWithPaidAmount(principalRemain, percentageRate, yearDays) {
     var interestDays = document.getElementById("interestdays").value;
     var interest = computeSIInterest(principalRemain, interestDays, percentageRate, yearDays);
     var interestPaid = document.getElementById("interestdue");
-    var pRemain = document.getElementById("principalreamain");
     interestPaid.value = interest;
     // Update Principal
     var pChange = document.getElementById("principalchange");
+    var pRemain = document.getElementById("principalremain");
     // If Payment Doesn't Coer Fees + Interest Roll It Into The Principal
     var effect = document.getElementById("amtpaid").value 
         - interest
@@ -26,7 +26,7 @@ function updateAllWithPaidAmount(principalRemain, percentageRate, yearDays) {
     }
     
     // Update The Remaining Principal
-    pRemain.value = pRemainValue + pChange.value;
+    pRemain.value = parseFloat (pRemain.value) + parseFloat (pChange.value);
 }
 
 /*
@@ -56,9 +56,10 @@ function updateInterestDays() {
     if (selectDay.value == "" || selectMonth.value == "") {
         return (-1);
     }
+    
     // Extract The Values Selected
     var day = parseInt (selectDay.value);
-    var month = parseInt (selectMonth.value);
+    var month = parseInt (selectMonth.value) - parseInt(1);
     var year = parseInt (selectYear.value);
     
     var lastDate = new Date(document.getElementById("lastTrxDate").value);
