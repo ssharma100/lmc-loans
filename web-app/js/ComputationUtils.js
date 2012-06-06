@@ -40,7 +40,7 @@ function updateAllWithPaidAmount(principalRemain, percentageRate, yearDays) {
  * 
  */
 function computeSIInterest(principalRemain, interestDays, percentageRate, yearDays) {
-    alert("Computing $" + principalRemain + " @ " + percentageRate + "For YearDays " + yearDays
+    alert("Computing $" + principalRemain + " @ " + percentageRate + " For YearDays " + yearDays
         + " Interest Days=" + interestDays );
     return (principalRemain * (percentageRate / 100) * (interestDays/yearDays));
 }

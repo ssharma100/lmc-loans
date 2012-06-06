@@ -34,6 +34,7 @@
       <th style="width: 20px; text-align: center">Due</th>
       <th style="width: 5px; text-align: center">Days</th>
       <th style="width: 50px; text-align: center">Interest</th>
+      <th style="width: 50px; text-align: center">Principal</th>
       <g:each var="trx" in="${trxs}">
         <tr>
           <td>${trx.trxid}</td>
@@ -43,6 +44,7 @@
           <td>&#36;${trx.amtdue}</td>
           <td>${trx.interestdays}</td>
           <td>&#36;${trx.interestdue}</td>
+          <td>&#36;${trx.principalchange}</td>
         </tr>
       </g:each>
     </table>

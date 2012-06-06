@@ -6,7 +6,8 @@ class AccountsController {
     
     def handleSearch = {
         accts = com.lmc.loan.domains.Accounts.list()
-        render(view: "summaryResults")
+        println ("Found " + accts.size())
+        render(view: "summaryResults", model: [accountList: accts])
     }
     
     def showAddScreen = {

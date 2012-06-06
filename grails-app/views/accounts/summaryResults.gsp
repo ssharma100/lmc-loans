@@ -20,6 +20,7 @@
     <!-- Iteration Of The Search Summary -->
     <p></p>
     <table style="width: 800px">
+      <th style="width: 10px; text-align: center">No.</th>
       <th style="width: 10px; text-align: center">Loan</th>
       <th style="width: 100px; text-align: center">First</th>
       <th style="width: 100px; text-align: center">Last</th>
@@ -27,15 +28,16 @@
       <th style="width: 70px; text-align: center">City</th>
       <th style="width: 50px; text-align: center">State</th>
       <th style="width: 60px; text-align: center">Zip</th>
-      <g:each var="a" in="${accts}">
+      <g:each var="account" in="${accountList}">
         <tr>
-          <td>${a.loanno}</td>
-          <td>${a.customer.first}</td>
-          <td>${a.customer.last}</td>
-          <td>${a.stmtAddress1}</td>
-          <td>${a.stmtCity}</td>
-          <td>${a.stmtState}</td>
-          <td>${a.stmtZip4}</td>
+          <td><g:link action="getDetail" params="[id: account.loanno]">${account.id}</g:link></td>
+          <td><g:link controller="SimpleInterestLoan" action="getDetail" params="[id: account.loanno]">${account.loanno}</g:link></td>
+          <td>${account.customer.first}</td>
+          <td>${account.customer.last}</td>
+          <td>${account.stmtAddress1}</td>
+          <td>${account.stmtCity}</td>
+          <td>${account.stmtState}</td>
+          <td>${account.stmtZip4}</td>
         </tr>
       </g:each>
     </table>
