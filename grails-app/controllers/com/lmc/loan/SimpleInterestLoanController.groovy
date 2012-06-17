@@ -15,6 +15,5 @@ class SimpleInterestLoanController {
         flash.lastPayment = trx;
         println("Last Transaction: " + trx);
         render(view: "showDetails", model: [simpleinterestloan: loan])
-        
     }
 }
