@@ -31,7 +31,7 @@
       <g:each var="account" in="${accountList}">
         <tr>
           <td><g:link action="getDetail" params="[id: account.loanno]">${account.id}</g:link></td>
-          <td><g:link controller="SimpleInterestLoan" action="getDetail" params="[id: account.loanno]">${account.loanno}</g:link></td>
+          <td><g:link controller="SimpleInterestLoan" action="getDetail" params="[loanno: account.loanno]">${account.loanno}</g:link></td>
           <td>${account.customer.first}</td>
           <td>${account.customer.last}</td>
           <td>${account.stmtAddress1}</td>
