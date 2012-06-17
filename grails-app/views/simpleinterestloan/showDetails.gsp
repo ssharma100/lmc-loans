@@ -10,12 +10,12 @@
     <h1>Transaction Search Results</h1>
     <table>
       <tr>
-        <td><g:link action="prepareAdd" params="[loanno: flash.loanno]">
-            Add Transaction
+        <td><g:link controller="Transactions"action="handleSearch" params="[loanno: simpleinterestloan.loanno]">
+            Show All Transactions
             </g:link>
         </td>
         <td>
-          <g:link action="prepareAdd" params="[loanno: flash.loanno]">
+          <g:link action="prepareAdd" params="[simpleinterestloan.loanno]">
             Refresh
           </g:link>
         </td>
