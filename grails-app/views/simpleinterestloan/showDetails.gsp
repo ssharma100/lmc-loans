@@ -11,7 +11,7 @@
     <table>
       <tr>
         <td><g:link controller="Transactions"action="handleSearch" params="[loanno: simpleinterestloan.loanno]">
-            Show All Transactions
+            Payment History
             </g:link>
         </td>
         <td>
@@ -42,7 +42,7 @@
         <td style="width: 5em;">&nbsp;</td><td style="width: 10px"></td>
       </tr>
       <tr style="background-color: darkgray; border: 0px; padding: 0px; border-color: darkgrey;">
-        <td style="width: 5em;" colspan="10"><span style="font-style: italic; font-weight: bold;">Loan Summary</span></td>
+        <td style="width: 5em;" colspan="10"><span style="font-style: italic; font-weight: bold;">Loan Activity</span></td>
       </tr>
       <tr>
         <td style="width: 5em;">Payments:&nbsp; ${flash.paymentCount}</td><td style="width: 10px"></td>

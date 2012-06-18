@@ -12,4 +12,8 @@ class SimpleInterestLoan {
     int dueday;
     int gracedays;
     float latepenalty;
+    // Loan Origination Information
+    float origAmount;
+    Date origDate;
+    float prePaymentPenalty;
 }
