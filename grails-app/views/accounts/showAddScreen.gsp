@@ -190,20 +190,20 @@
       <table style="width: 400px; border: 0px;">
         <tr><td colspan="5">&nbsp;</td></tr>
         <tr>
-          <th colspan="5">Loan Information</th>
+          <th colspan="5">New Loan</th>
         </tr>
         <tr>
           <td style="width: 130px;">
             *Loan No.
           </td>
           <td>
-            &nbsp;
+              <g:textField name="loan_no" size="5"/>
           </td>
           <td style="width: 3px;">
             &nbsp;
           </td>
           <th style="width: 70px;" colspan="2">
-            Borrower
+            Loan Information
           </th>
         </tr>
         <tr>
@@ -217,10 +217,10 @@
             &nbsp;
           </td>
           <td>
-            *First Name:
+            *I Rate:
           </td>
           <td>
-            &nbsp;
+            <g:textField name="loan_rate" size="4"/>
           </td>
         </tr>
         <tr>
@@ -231,10 +231,10 @@
             &nbsp;
           </td>
           <td>
-            *Last Name:
+            *I Days/Yr:
           </td>
           <td>
-            &nbsp;
+            <g:textField name="loan_days_yr" size="5"/>
           </td>
         </tr>
         <tr>
@@ -242,27 +242,33 @@
             *Street/No.:
           </td>
           <td>
-            &nbsp;
+            <g:textField name="loan_addr_street" size="5"/>
           </td>
           <td>
             &nbsp;
           </td>
-          <th colspan="2">
-            Co-Borrower
-          </th>
+          <td>
+            *Term:
+          </td>
+          <td>
+            <g:textField name="loan_term" size="5" />
+          </td>
         </tr>
         <tr>
           <td>
             Unit No.:
           </td>
           <td>
-            hi
+            <g:textField name="loan_addr_second" size="5"/>
           </td>
           <td>
             &nbsp;
           </td>
           <td>
-            First Name:
+            *Payments:
+          </td>
+          <td>
+            <g:select name="loan_payment" from="${['Weekly', 'Monthly']}" />
           </td>
         </tr>
         <tr>
@@ -270,16 +276,16 @@
             *City:
           </td>
           <td>
-            &nbsp;
+            <g:textField name="loan_addr_city" size="5"/>
           </td>
           <td>
             &nbsp;
           </td>
           <td>
-            Last Name:
+            *Amt Due:
           </td>
           <td>
-            &nbsp;
+            <g:textField name="loan_amt_due" size="5"/>
           </td>
         </tr>
         <tr>
@@ -287,61 +293,61 @@
             *State:
           </td>
           <td>
-        <g:textField name="si_loanno" size="5"/>
+            <g:textField name="loan_addr_state" size="5"/>
       </td>
       <td>
         &nbsp;
       </td>
-      <th colspan="2">
-        Loan Details
-      </th>          
+      <td>
+        *Grace:
+      </td>
+      <td>
+        <g:select name="loan_grace_days" from="${1..31}" />
+      </td>
       </tr>
       <tr>
         <td>
           *Zip:
         </td>
         <td>
-          &nbsp;
+          <g:textField name="loan_addr_zip" size="5"/>
         </td>
         <td>
           &nbsp;
         </td>
         <td>
-          Interest Rate:
+          *Late Fee:
         </td>
         <td>
-      <g:select name="si_rate" from="${0..45}" value="0"/>
+      <g:select name="loan_late_penalty" from="${0..45}" value="0"/> %
         </td>
         </tr>
         <tr>
-          <th colspan="2">
-            Alternate Address:
-          </th>
+          <td colspan="2">
+            &nbsp;
+          </td>
           <td>
             &nbsp;
           </td>
           <td>
-            Principal:
+            *Principal:
           </td>
           <td>
-        <g:textField name="si_principal" size="5"/>
-        </td>
+            <g:textField name="loan_principal" size="5"/>
+          </td>
         </tr>
         <tr>
-          <td>
-            *Street/No.:
-          </td>
-          <td>
+          <td colspan="2">
             &nbsp;
           </td>
           <td>
             &nbsp;
           </td>
           <td>
-            &nbsp;
+            Prepay Fee:
           </td>
           <td>
-            &nbsp;
+            <g:textField name="loan_prepay_penalty" size="5"/>
           </td>
         </tr>        
     </table>
