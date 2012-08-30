@@ -48,7 +48,7 @@
               *First Name:
             </td>
             <td>
-              &nbsp;
+              <g:textField name="p_borrower_first" size="5"/>
             </td>
           </tr>
           <tr>
@@ -62,7 +62,7 @@
               *Last Name:
             </td>
             <td>
-              &nbsp;
+              <g:textField name="p_borrower_last" size="5"/>
             </td>
           </tr>
           <tr>
@@ -70,7 +70,7 @@
               *Street/No.:
             </td>
             <td>
-              <g:textField name="p_addr_first" size="5"/>
+              <g:textField name="p_addr_street" size="8"/>
             </td>
             <td>
               &nbsp;
@@ -92,6 +92,9 @@
             <td>
               First Name:
             </td>
+            <td>
+              <g:textField name="co_cust_first" size="5"/>
+            </td>
           </tr>
           <tr>
             <td>
@@ -108,7 +111,7 @@
               </td>
               <td>
                 <g:textField name="co_cust_last" size="5"/>
-              </td>
+              </td>              
             </tr>
             <tr>
               <td>
@@ -129,19 +132,19 @@
               </tr>
               <tr>
                 <td>
-                  &nbsp;
-                </td>
-                <td>
-                  &nbsp;
-                </td>
-                <td>
-                  &nbsp;
-                </td>
-                <td>
-                  *Zip:
+                  *Zip
                 </td>
                 <td>
                   <g:textField name="p_addr_zip" size="5"/>
+                </td>
+                <td>
+                  &nbsp;
+                </td>
+                <td>
+                  &nbsp;
+                </td>
+                <td>
+                  &nbsp;
                 </td>
               </tr>
               <tr>
@@ -253,7 +256,7 @@
             Unit No.:
           </td>
           <td>
-            &nbsp;
+            hi
           </td>
           <td>
             &nbsp;
