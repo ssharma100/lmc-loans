@@ -11,8 +11,8 @@
     <h1>Add New Account</h1>
     Please complete all fields marked with an asterisk (<span>*</span>)
     </br>
-  <g:form name="addAccontForm" url="[controller:'accounts',action:'handleAdd']" >
-    <table style="width: 800px; border: 0px; padding: 0px;" />
+  <g:form name="addAccountForm" >
+    <table style="width: 800px; border: 0px; padding: 0px;" >
     <tr>
       <td>
         <table style="width: 400px; border: 0px;">
@@ -353,6 +353,16 @@
     </table>
     </td>
   </tr>
+  </table>
+  <table style="width: 800px; border: 0px; padding: 0px;" >
+    <tr>
+      <td>
+        <g:actionSubmit value="Submit" action="handleAdd" onclick="return confirm('Create/Commit Account?')"/>
+      </td>
+      <td>
+        <g:actionSubmit value="Reset" onclick="return confirm('Sure?');" />
+      </td>
+    </tr>
   </table>
 </g:form>
 </body>

@@ -11,7 +11,8 @@ class AccountsController {
     }
     
     def handleAdd = {
-        
+        println("Processing Create Account Request....");
+        render(view: "showAccountDetailScreen")
     }
     
     def prepareAdd = {

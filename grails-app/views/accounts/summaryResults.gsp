@@ -7,11 +7,11 @@
     <meta name="layout" content="main" />
   </head>
   <body>
-    <h1>Account Search Summary</h1>
+    <h1>Account Search Results</h1>
     <table>
       <tr>
-        <td><g:link action="showAddScreen">Add Account</g:link></td>
-        <td><a href="<g:resource dir='/' file='' absolute="true" />">Home</a></td>
+        <td><g:link url="[controller:'accounts',action:'prepareAdd']" >Add Account</g:link></td>
+        <td><a href="<g:resource dir='/' file='' absolute='true' />">Home</a></td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td>Help</td>
