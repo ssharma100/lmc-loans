@@ -2,6 +2,7 @@ package com.lmc.loan.domains
 
 class SimpleInterestLoan {
     static constraints = {
+        loanno (nullable: false, blank: false)
     }
 
     int loanno;

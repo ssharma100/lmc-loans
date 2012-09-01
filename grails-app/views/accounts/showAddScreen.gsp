@@ -236,7 +236,7 @@
             *Street/No.:
           </td>
           <td>
-            <g:textField name="Address1" size="5"/>
+            <g:textField name="address1" size="5"/>
           </td>
           <td>
             &nbsp;
@@ -253,7 +253,7 @@
             Unit No.:
           </td>
           <td>
-            <g:textField name="loan_addr_second" size="5"/>
+            <g:textField name="address2" size="5"/>
           </td>
           <td>
             &nbsp;
@@ -270,7 +270,7 @@
             *City:
           </td>
           <td>
-            <g:textField name="stmtCity" size="5"/>
+            <g:textField name="city" size="5"/>
           </td>
           <td>
             &nbsp;
@@ -287,7 +287,7 @@
             *State:
           </td>
           <td>
-            <g:textField name="stmtState" size="5"/>
+            <g:textField name="state" size="5"/>
       </td>
       <td>
         &nbsp;
@@ -304,7 +304,7 @@
           *Zip:
         </td>
         <td>
-          <g:textField name="stmtZip4" size="5"/>
+          <g:textField name="zip4" size="5"/>
         </td>
         <td>
           &nbsp;
@@ -317,8 +317,11 @@
         </td>
         </tr>
         <tr>
-          <td colspan="2">
-            &nbsp;
+          <td>
+           Tel:
+          </td>
+          <td>
+            <g:textField name="maintel" size="5"/>
           </td>
           <td>
             &nbsp;
