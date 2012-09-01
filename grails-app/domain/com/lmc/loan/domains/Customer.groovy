@@ -7,7 +7,6 @@ class Customer {
 
     // One-To-One Mapping Of Domain
     Accounts accounts;
-    SimpleInterestLoan loan;
 
     String first;
     String middle;

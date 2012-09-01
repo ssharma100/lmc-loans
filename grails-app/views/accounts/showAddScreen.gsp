@@ -25,7 +25,7 @@
               *Account No.
             </td>
             <td>
-              &nbsp;
+              <g:textField name="account_no" size="5"/>
             </td>
             <td style="width: 3px;">
               &nbsp;
@@ -35,10 +35,7 @@
             </th>
           </tr>
           <tr>
-            <td>
-              Created
-            </td>
-            <td>
+            <td colspan="2">
               &nbsp;
             </td>
             <td>
@@ -48,12 +45,12 @@
               *First Name:
             </td>
             <td>
-              <g:textField name="p_borrower_first" size="5"/>
+              <g:textField name="first" size="5"/>
             </td>
           </tr>
           <tr>
             <th colspan="2">
-              Permanent Address
+              Statement/Billing Address
             </th>
             <td>
               &nbsp;
@@ -62,7 +59,7 @@
               *Last Name:
             </td>
             <td>
-              <g:textField name="p_borrower_last" size="5"/>
+              <g:textField name="last" size="5"/>
             </td>
           </tr>
           <tr>
@@ -70,7 +67,7 @@
               *Street/No.:
             </td>
             <td>
-              <g:textField name="p_addr_street" size="8"/>
+              <g:textField name="stmtAddress1" size="8"/>
             </td>
             <td>
               &nbsp;
@@ -84,7 +81,7 @@
               Unit No.:
             </td>
             <td>
-              <g:textField name="p_addr_second" size="5"/>
+              <g:textField name="stmtAddress2" size="5"/>
             </td>
             <td>
               &nbsp;
@@ -101,7 +98,7 @@
               *City:
             </td>
             <td>
-              <g:textField name="p_addr_city" size="8"/>
+              <g:textField name="stmtCity" size="8"/>
             </td>
               <td>
                 &nbsp;
@@ -118,7 +115,7 @@
                 *State:
               </td>
               <td>
-                <g:textField name="p_addr_state" size="5"/>
+                <g:textField name="stmtState" size="5"/>
               </td>
               <td>
                 &nbsp;
@@ -135,7 +132,7 @@
                   *Zip
                 </td>
                 <td>
-                  <g:textField name="p_addr_zip" size="5"/>
+                  <g:textField name="stmtZip4" size="5"/>
                 </td>
                 <td>
                   &nbsp;
@@ -197,7 +194,7 @@
             *Loan No.
           </td>
           <td>
-              <g:textField name="loan_no" size="5"/>
+              <g:textField name="loanno" size="5"/>
           </td>
           <td style="width: 3px;">
             &nbsp;
@@ -207,11 +204,8 @@
           </th>
         </tr>
         <tr>
-          <td>
-            Created
-          </td>
-          <td>
-            &nbsp;
+          <td colspan="2">
+            Created: &nbsp; <g:textField name="loan_day" length="2" size="2"/>-<g:textField name="loan_month" size="2"/>-<g:textField name="loan_year" size="2"/>
           </td>
           <td>
             &nbsp;
@@ -242,7 +236,7 @@
             *Street/No.:
           </td>
           <td>
-            <g:textField name="loan_addr_street" size="5"/>
+            <g:textField name="Address1" size="5"/>
           </td>
           <td>
             &nbsp;
@@ -276,7 +270,7 @@
             *City:
           </td>
           <td>
-            <g:textField name="loan_addr_city" size="5"/>
+            <g:textField name="stmtCity" size="5"/>
           </td>
           <td>
             &nbsp;
@@ -293,7 +287,7 @@
             *State:
           </td>
           <td>
-            <g:textField name="loan_addr_state" size="5"/>
+            <g:textField name="stmtState" size="5"/>
       </td>
       <td>
         &nbsp;
@@ -310,7 +304,7 @@
           *Zip:
         </td>
         <td>
-          <g:textField name="loan_addr_zip" size="5"/>
+          <g:textField name="stmtZip4" size="5"/>
         </td>
         <td>
           &nbsp;
@@ -360,7 +354,7 @@
         <g:actionSubmit value="Submit" action="handleAdd" onclick="return confirm('Create/Commit Account?')"/>
       </td>
       <td>
-        <g:actionSubmit value="Reset" onclick="return confirm('Sure?');" />
+        <g:actionSubmit value="Reset" onclick="return confirm('All Fields Will Be Reset! Are You Sure?');" />
       </td>
     </tr>
   </table>
