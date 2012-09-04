@@ -3,8 +3,8 @@ package com.lmc.loan.domains
 class Customer {
     static mapping = {
         id name: 'id', generator: 'increment', column: 'id'
-        version column:'version'
     }
+    
     static constraints = {
         address2 (nullable: true, blank: true)
         maintel (nullable: false, blank: false)
@@ -12,9 +12,11 @@ class Customer {
         middle (nullable: true, blank: true)
         state (blank: false, minSize: 2, maxSize:2)
         zip4 (blank: false, minSize: 5, maxSize:5)
-    }
+        
+        account (nullable: true)
+    }    
     
-    static hasOne = [account:Accounts]
+    static belongsTo = [account:Accounts]
     
     String first
     String middle

@@ -22,10 +22,10 @@
           </tr>
           <tr>
             <td style="width: 80px;">
-              *Account No.
+              Open Account
             </td>
             <td>
-              <g:textField name="account_no" size="5"/>
+              &nbsp;
             </td>
             <td style="width: 3px;">
               &nbsp;
@@ -36,7 +36,7 @@
           </tr>
           <tr>
             <td colspan="2">
-              &nbsp;
+              <strong>Account ID Auto-Assigned</strong>
             </td>
             <td>
               &nbsp;
@@ -205,7 +205,7 @@
         </tr>
         <tr>
           <td colspan="2">
-            Created: &nbsp; <g:textField name="loan_day" length="2" size="2"/>-<g:textField name="loan_month" size="2"/>-<g:textField name="loan_year" size="2"/>
+            Loan Originated On: &nbsp; 
           </td>
           <td>
             &nbsp;
@@ -214,7 +214,18 @@
             *I Rate:
           </td>
           <td>
-            <g:textField name="loan_rate" size="4"/>
+            <g:textField name="percentagerate" size="4"/>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <g:datePicker name="origDate" value="${new Date()}" precision="day"/>
+          </td>
+          <td>
+            Due Day:
+          </td>
+          <td>
+            <g:select name="dueday" from="${1..31}" />
           </td>
         </tr>
         <tr>
@@ -228,7 +239,7 @@
             *I Days/Yr:
           </td>
           <td>
-            <g:textField name="loan_days_yr" size="5"/>
+            <g:textField name="annualdays" value="365" size="5"/>
           </td>
         </tr>
         <tr>
@@ -245,7 +256,7 @@
             *Term:
           </td>
           <td>
-            <g:textField name="loan_term" size="5" />
+            <g:textField name="loanterm" size="5" />
           </td>
         </tr>
         <tr>
@@ -262,7 +273,7 @@
             *Payments:
           </td>
           <td>
-            <g:select name="loan_payment" from="${['Weekly', 'Monthly']}" />
+            <g:select name="payperiod" from="${['WEEKLY', 'MONTHLY']}" />
           </td>
         </tr>
         <tr>
@@ -279,7 +290,7 @@
             *Amt Due:
           </td>
           <td>
-            <g:textField name="loan_amt_due" size="5"/>
+            <g:textField name="amountdue" size="5"/>
           </td>
         </tr>
         <tr>
@@ -296,7 +307,7 @@
         *Grace:
       </td>
       <td>
-        <g:select name="loan_grace_days" from="${1..31}" />
+        <g:select name="gracedays" from="${1..31}" />
       </td>
       </tr>
       <tr>
@@ -313,12 +324,12 @@
           *Late Fee:
         </td>
         <td>
-      <g:select name="loan_late_penalty" from="${0..45}" value="0"/> %
+      <g:select name="latepenalty" from="${0..45}" value="0"/> %
         </td>
         </tr>
         <tr>
           <td>
-           Tel:
+           *Tel:
           </td>
           <td>
             <g:textField name="maintel" size="5"/>
@@ -330,7 +341,7 @@
             *Principal:
           </td>
           <td>
-            <g:textField name="loan_principal" size="5"/>
+            <g:textField name="origAmount" size="5"/>
           </td>
         </tr>
         <tr>
@@ -344,7 +355,7 @@
             Prepay Fee:
           </td>
           <td>
-            <g:textField name="loan_prepay_penalty" size="5"/>
+            <g:textField name="prePaymentPenalty" size="5"/>
           </td>
         </tr>        
     </table>
