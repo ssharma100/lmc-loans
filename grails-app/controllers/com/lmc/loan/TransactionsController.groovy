@@ -8,7 +8,13 @@ class TransactionsController {
     def handleSearch = {
         trxs = com.lmc.loan.domains.Transactions.findAllByLoanno(params.loanno)
         flash.loanno = params.loanno
-        render(view: "summaryResults")
+        // Handle Empty Results (For A New Loan, With No Postings)
+        if (trxs.isEmpty()) {
+            render(view: "emptyResults")
+        }
+        else {
+            render(view: "summaryResults")
+        }
     }
 
     def handleAdd = {

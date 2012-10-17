@@ -44,13 +44,20 @@
       <tr style="background-color: darkgray; border: 0px; padding: 0px; border-color: darkgrey;">
         <td style="width: 5em;" colspan="10"><span style="font-style: italic; font-weight: bold;">Loan Activity</span></td>
       </tr>
+      <g:if test="${flash.lastPayment != null}">
       <tr>
         <td style="width: 5em;">Payments:&nbsp; ${flash.paymentCount}</td><td style="width: 10px"></td>
         <td style="width: 5em;" colspan="2">Last Payment: ${flash.lastPayment.paymentdate}</td>
         <td style="width: 5em;">Last Paid &nbsp;$ ${flash.lastPayment.amtpaid}</td><td style="width: 10px"></td>
         <td style="width: 5em;" colspan="4">Principal Remain: &nbsp; $ ${flash.lastPayment.principalremain}</td>
-    
-      </tr>      
+      </tr>
+      </g:if>
+      <g:else>
+        <td style="width: 5em;">Payments:&nbsp; None</td><td style="width: 10px"></td>
+        <td style="width: 5em;" colspan="2">Last Payment: N/A</td>
+        <td style="width: 5em;">Last Paid &nbsp;$ N/A</td><td style="width: 10px"></td>
+        <td style="width: 5em;" colspan="4">Principal Remain: &nbsp; $ ${simpleinterestloan.origAmount}</td>
+      </g:else>
     </table>
   </body>
 </html>

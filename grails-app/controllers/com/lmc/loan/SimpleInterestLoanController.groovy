@@ -12,8 +12,8 @@ class SimpleInterestLoanController {
         flash.paymentCount = trxs.size();
         println("Transactions: " + trxs.size())
         def trx = com.lmc.loan.domains.Transactions.find("from Transactions as tx where tx.loanno='" + params.loanno + "' order by tx.seqno desc limit 1")
-        flash.lastPayment = trx;
         println("Last Transaction: " + trx);
+        flash.lastPayment = trx;
         render(view: "showDetails", model: [simpleinterestloan: loan])
     }
 }

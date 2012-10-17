@@ -18,14 +18,28 @@
     </tr>
     <tr>
     <g:form name="addTransaction" url="[action:'handleAdd',controller:'transactions']">
+      
+      <!-- Some Logic For Handling Cases Where There Is No 'Last Transaction' -->
+      <g:if test="${lasttrx != null}">
+        <g:set var="principalremain" value="${lasttrx.principalremain}" />
+        <g:set var="nextseq" value="${lasttrx.seqno.next()}" />
+        <g:set var="lastpaymentdate" value="${lasttrx.paymentdate}" />
+      </g:if>
+      <g:else>
+        <g:set var="principalremain" value="${simpleinterestloan.origAmount}" />
+        <g:set var="nextseq" value="1" />
+        <g:set var="lastpaymentdate" value="${simpleinterestloan.origDate}" />
+      </g:else>
+            
       <td>
         <table style="width: 180px;">
           <tr><td>Loan No.</td><td>${simpleinterestloan.loanno}</td></tr>
           <tr><td>Due Day</td><td>${simpleinterestloan.dueday}</td></tr>
           <tr><td>Grace Day</td><td>${simpleinterestloan.gracedays}</td></tr>
           <tr><td>Late Fee</td><td>${simpleinterestloan.latepenalty}</td></tr>
-          <tr><td>Amount Due</td><td>&#36; ${simpleinterestloan.amountdue}</td></tr>
           <tr><td>Percentage</td><td>${simpleinterestloan.percentagerate}%</td></tr>
+          <tr><td>Amount Due</td><td>&#36; ${simpleinterestloan.amountdue}</td></tr>
+          <tr><td>Last Payment</td><td>${lastpaymentdate}</td></tr>
         </table>
       </td>
       <td>
@@ -105,22 +119,22 @@
               </select>
             </td>
           </tr>
-          <tr><td>Payment</td><td>&#36; <g:textField name="amtpaid" value="" maxlength="7" size="7" onchange="javascript:updateAllWithPaidAmount(${lasttrx.principalremain}, ${simpleinterestloan.percentagerate}, ${simpleinterestloan.annualdays});" /></td></tr>
+          <tr><td>Payment</td><td>&#36; <g:textField name="amtpaid" value="" maxlength="7" size="7" onchange="javascript:updateAllWithPaidAmount(${principalremain}, ${simpleinterestloan.percentagerate}, ${simpleinterestloan.annualdays});" /></td></tr>
 
       <tr><td>Additional Fees</td><td>&#36; <g:textField name="feespaid" value="" maxlength="7" size="7" /></td></tr>
       <tr><td>Late Fee</td><td>&#36; <g:textField name="latepaid" value="" maxlength="7" size="7" /></td></tr>
       <tr><td>Interest Paid</td><td>&#36; <g:textField name="interestdue" value="" maxlength="7" size="7" /></td></tr>
       <tr><td>Interest Days</td><td>&nbsp; &nbsp;<g:textField name="interestdays" value="0" readonly="readonly" maxlength="7" size="7" /></td></tr>
 
-      <tr><td>Principal Current</td><td>&#36; ${lasttrx.principalremain}</td></tr>
+      <tr><td>Principal Current</td><td>&#36; ${principalremain}</td></tr>
       <tr><td>Principal Change</td><td>&#36; <g:textField name="principalchange" value="0.00" readonly="readonly" maxlength="7" size="7" /></td></tr>
-      <tr><td>Principal Remain</td><td>&#36; <g:textField name="principalremain" value="${lasttrx.principalremain}" maxlength="7" size="7" /></td></tr>
-      <tr><td>Payment No.</td><td>${lasttrx.seqno.next()}</td></tr>
+      <tr><td>Principal Remain</td><td>&#36; <g:textField name="principalremain" value="${principalremain}" maxlength="7" size="7" /></td></tr>
+      <tr><td>Payment No.</td><td>${nextseq}</td></tr>
       
       <tr><td><input type="submit" value="Add" /></td><td>&nbsp;</td></tr>
-      <!-- Hidden Fields For Handling Of The -->
-      <input type="hidden" id="lastTrxDate" name="lastTrxDate" value="${lasttrx.paymentdate}" />
-      <input type="hidden" id="seqNo" name="seqNo" value="${lasttrx.seqno.next()}" />
+      <!-- Hidden Fields To Make Them Available To JavaScript For This Page & Form Persistence -->
+      <input type="hidden" id="lastTrxDate" name="lastTrxDate" value="${lastpaymentdate}" />
+      <input type="hidden" id="seqNo" name="seqNo" value="${nextseq}" />
       <input type="hidden" id="dueDay" name="dueDay" value="${simpleinterestloan.dueday}" />      
       <input type="hidden" id="allowance" name="allowance" value="${simpleinterestloan.gracedays}" />
       <input type="hidden" id="latepercentage" name="latepercentage" value="${simpleinterestloan.latepenalty}" />

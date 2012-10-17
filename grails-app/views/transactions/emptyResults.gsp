@@ -26,6 +26,18 @@
     </table>
     <!-- Iteration Of The Search Summary -->
     <p></p>
-    <h3>No Transactions Found!</h3>
+    <table>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>
+          <center><span class="message">No Payments Or Transactions Found For This Loan!</span></center>
+        </td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
   </body>
 </html>
