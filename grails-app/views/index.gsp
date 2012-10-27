@@ -87,31 +87,18 @@
       <div class="TabbedPanelsContentGroup">
         <div class="TabbedPanelsContent">
           <p class="menuButton">Account Management</p>
-          <p>Select Account Search Criteria And Click Search:</p>
+          <p>&nbsp;</p>
           <g:form name="acctSearchForm" url="[controller:'accounts',action:'handleSearch']" >
             <table width="175" border="0">
               <tr>
-                <td>First Name:</td>
-                <td><g:textField value="${acctFirstName}" name="acctFirstName" maxlength="35" size="12" /></td>
-              </tr>
-              <tr>
-                <td>Last Name:</td>
-                <td><input type="text" name="acctFirstLast" id="acctFirstName" maxlength="35" size="12"/></td>
-              </tr>
-              <tr>
-                <td>City, Zip</td>
-                <td><input type="text" name="acctCity" id="acctFirstName" maxlength="35" size="10" />, <input type="text" name="acctZip" id="acctFirstName" maxlength="5"  size="5"/></td>
-              </tr>
-              <tr>
-                <td>Account No.</td>
-                <td><input name="acctNo" type="text" id="acctFirstName" size="3" maxlength="3" /></td>
+                <td>
+                   Click To View And Manage Accounts:
+                  <input type="submit" value="Submit" /> &nbsp;                  
+                </td>
               </tr>
             </table>
             <p>&nbsp;</p>
-            <p>
-              <input type="submit" value="Submit" /> &nbsp;
-              <g:link url="[controller:'accounts',action:'prepareAdd']" >Add Account</g:link>
-            </p>
+            <p><g:link url="[controller:'accounts',action:'prepareAdd']" >&nbsp; Add Account</g:link></p>
           </g:form>
         </div>
         <div class="TabbedPanelsContent">Loan Information</div>

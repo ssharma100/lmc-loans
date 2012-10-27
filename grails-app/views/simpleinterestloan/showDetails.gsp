@@ -58,6 +58,12 @@
         <td style="width: 5em;">Last Paid &nbsp;$ N/A</td><td style="width: 10px"></td>
         <td style="width: 5em;" colspan="4">Principal Remain: &nbsp; $ ${simpleinterestloan.origAmount}</td>
       </g:else>
+      <tr style="background-color: darkgray; border: 0px; padding: 0px; border-color: darkgrey;">
+        <td style="width: 5em;" colspan="10"><span style="font-style: italic; font-weight: bold;">Performance Summary</span></td>
+      </tr>
+      <tr>
+        
+      </tr>
     </table>
   </body>
 </html>
