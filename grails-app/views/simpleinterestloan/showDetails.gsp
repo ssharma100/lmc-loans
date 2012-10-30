@@ -25,19 +25,19 @@
         <td>Help</td>
       </tr>
     </table>
-    <!-- Iteration Of The Search Summary -->
+    <!-- Loan Info & Status Search Summary -->
     <p></p>
     <table style="width: 900px; border-width: 7px;">
       <tr>
         <td style="width: 5em;">Loan No.:&nbsp; ${simpleinterestloan.loanno}</td><td style="width: 10px"></td>
         <td style="width: 5em;">Percentage:&nbsp; ${simpleinterestloan.percentagerate}</td><td style="width: 10px"></td>
         <td style="width: 5em;">Term (Months):&nbsp; ${simpleinterestloan.loanterm}</td><td style="width: 10px"></td>
-        <td style="width: 5em;">Amount:&nbsp; ${simpleinterestloan.amountdue}</td><td style="width: 10px"></td>
-        <td style="width: 5em;">Due On:&nbsp; ${simpleinterestloan.dueday}</td><td style="width: 10px"></td>
+        <td style="width: 5em;">Due:&nbsp; $ ${simpleinterestloan.amountdue} Penalty:&nbsp; ${simpleinterestloan.latepenalty}%</td><td style="width: 10px"></td>
+        <td style="width: 5em;">Due On:&nbsp; ${simpleinterestloan.dueday} Grace:&nbsp; ${simpleinterestloan.gracedays}</td><td style="width: 10px"></td>
       </tr>
       <tr>
-        <td style="width: 5em;">Penalty:&nbsp; ${simpleinterestloan.latepenalty}</td><td style="width: 10px"></td>
-        <td style="width: 5em;">Grace:&nbsp; ${simpleinterestloan.gracedays}</td><td style="width: 10px"></td>
+        <td style="width: 5em;"></td><td style="width: 10px"></td>
+        <td style="width: 5em;"></td><td style="width: 10px"></td>
         <td style="width: 5em;">&nbsp;</td><td style="width: 10px"></td>
         <td style="width: 5em;">&nbsp;</td><td style="width: 10px"></td>
         <td style="width: 5em;">&nbsp;</td><td style="width: 10px"></td>
@@ -48,13 +48,13 @@
       <g:if test="${flash.lastPayment != null}">
       <tr>
         <td style="width: 5em;">Payments:&nbsp; ${flash.paymentCount}</td><td style="width: 10px"></td>
-        <td style="width: 5em;" colspan="2">Last On: ${flash.lastPayment.paymentdate}</td>
+        <td style="width: 5em;" colspan="2">Last On: ${flash.lastPayment.paymentdate.format('yyyy-MM-dd')}</td>
         <td style="width: 5em;">Amount: &nbsp;$ ${flash.lastPayment.amtpaid}</td><td style="width: 10px"></td>
         <td style="width: 5em;" colspan="4">Principal Remain: &nbsp; $ ${flash.lastPayment.principalremain}</td>
       </tr>
       <tr>
         <td style="width: 5em;">Remain :&nbsp; ${simpleinterestloan.loanterm - flash.paymentCount}</td><td style="width: 10px"></td>
-        <td style="width: 5em;" colspan="2">P TD: &nbsp; $ ${flash.totalPrincipal}</td>
+        <td style="width: 5em;" colspan="2">Prin TD: &nbsp; $ ${flash.totalPrincipal}</td>
         <td style="width: 5em;">Int TD: &nbsp;$ ${flash.totalInterest}</td><td style="width: 10px"></td>
         <td style="width: 5em;" colspan="4">&nbsp;</td>
       </tr>
@@ -68,3 +68,4 @@
     </table>
   </body>
 </html>
+
