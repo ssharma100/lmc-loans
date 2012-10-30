@@ -3,21 +3,22 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Loan Details Search Summary</title>
+    <title>Loan Detail &amp; Rollup Info</title>
     <meta name="layout" content="main" />
   </head>
   <body>
-    <h1>Transaction Search Results</h1>
+    <h1>Loan Detail Information</h1>
     <table>
       <tr>
-        <td><g:link controller="Transactions"action="handleSearch" params="[loanno: simpleinterestloan.loanno]">
+        <td>
+          <g:link controller="Transactions"action="handleSearch" params="[loanno: simpleinterestloan.loanno]">
             Payment History
-            </g:link>
+          </g:link>
         </td>
         <td>
-          <g:link action="prepareAdd" params="[simpleinterestloan.loanno]">
-            Refresh
-          </g:link>
+          <g:link controller="Transactions" action="prepareAdd" params="[loanno: simpleinterestloan.loanno]">
+            Add Loan Payment
+            </g:link>
         </td>
         <td>&nbsp;</td>
         <td>&nbsp;</td>
@@ -47,9 +48,15 @@
       <g:if test="${flash.lastPayment != null}">
       <tr>
         <td style="width: 5em;">Payments:&nbsp; ${flash.paymentCount}</td><td style="width: 10px"></td>
-        <td style="width: 5em;" colspan="2">Last Payment: ${flash.lastPayment.paymentdate}</td>
-        <td style="width: 5em;">Last Paid &nbsp;$ ${flash.lastPayment.amtpaid}</td><td style="width: 10px"></td>
+        <td style="width: 5em;" colspan="2">Last On: ${flash.lastPayment.paymentdate}</td>
+        <td style="width: 5em;">Amount: &nbsp;$ ${flash.lastPayment.amtpaid}</td><td style="width: 10px"></td>
         <td style="width: 5em;" colspan="4">Principal Remain: &nbsp; $ ${flash.lastPayment.principalremain}</td>
+      </tr>
+      <tr>
+        <td style="width: 5em;">Remain :&nbsp; ${simpleinterestloan.loanterm - flash.paymentCount}</td><td style="width: 10px"></td>
+        <td style="width: 5em;" colspan="2">P TD: &nbsp; $ ${flash.totalPrincipal}</td>
+        <td style="width: 5em;">Int TD: &nbsp;$ ${flash.totalInterest}</td><td style="width: 10px"></td>
+        <td style="width: 5em;" colspan="4">&nbsp;</td>
       </tr>
       </g:if>
       <g:else>

@@ -13,8 +13,8 @@
   <h1>Add Loan Payment</h1>
   <table style="width: 500px; padding: 0px;">
     <tr>
-      <td style="text-align: left; font-weight: bold;">Loan Summary</td>
-      <td style="text-align: center; font-weight: bold;">Payment Entry</td>
+      <td style="text-align: left; font-weight: bold;">Loan Information</td>
+      <td style="text-align: center; font-weight: bold;">Enter Current Payment</td>
     </tr>
     <tr>
     <g:form name="addTransaction" url="[action:'handleAdd',controller:'transactions']">

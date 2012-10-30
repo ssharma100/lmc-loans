@@ -46,6 +46,14 @@ class AccountsController {
         render(view: "showAccountDetailScreen")
     }
     
+    def handleDetail = {
+        // Find The Item As Requested.
+        def account = com.lmc.loan.domains.Accounts.get(params.id)
+        // Compute The Transaction Information        
+        println("Showing Information For: " + account.customer.first + " " + account.customer.last)
+        render(view: "showAccountDetailScreen", model: [accounts: account])
+    }
+    
     def prepareAdd = {
         render(view: "showAddScreen")
     }

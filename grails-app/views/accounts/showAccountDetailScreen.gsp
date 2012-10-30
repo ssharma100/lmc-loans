@@ -13,5 +13,14 @@
   </head>
   <body>
     <h1>Account Details</h1>
+    <table>
+      <tr>
+        <td><g:link url="[controller:'accounts',action:'prepareAdd']" >Add Account</g:link></td>
+        <td><a href="<g:resource dir='/' file='' absolute='true' />">Home</a></td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>Help</td>
+      </tr>
+    </table>
   </body>
 </html>
