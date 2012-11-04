@@ -93,7 +93,7 @@
               <tr>
                 <td>
                    Click To View And Manage Accounts:
-                  <input type="submit" value="Submit" /> &nbsp;                  
+                  <input type="submit" value="View" /> &nbsp;                  
                 </td>
               </tr>
             </table>
