@@ -21,13 +21,14 @@ class SimpleInterestLoanController {
             flash.totalInterest = totalInterest.round(2)
             flash.totalPrincipal = totalPrincipal.round(2)
         }
-        println ("Interest: " + totalInterest.round(2) + " Principal Total: " + totalPrincipal.round(2))
-        println("Transactions: " + trxs.size())
+        println ("Interest: " + totalInterest + " Principal Total: " + totalPrincipal)
+        println("Transactions: " + flash.paymentCount)
+        // Fetch The Last Payment For Displaying Its Information
         def trx = com.lmc.loan.domains.Transactions.find(
             "from Transactions as tx where tx.loanno='" + params.loanno + "' order by tx.seqno desc limit 1"
             )
         flash.lastPayment = trx;
-
+        // Release Redender View
         render(view: "showDetails", model: [simpleinterestloan: loan])
     }
 }
