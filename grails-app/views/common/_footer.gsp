@@ -4,4 +4,4 @@
 -->
 
 <%@ page contentType="text/html;charset=UTF-8" %>
-<span>&copy; 2010-2012 Litespeed Motor Cars LLC.</span>
+<span>&copy; 2010-2013 Litespeed Motor Cars LLC</span>

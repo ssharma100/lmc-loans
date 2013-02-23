@@ -10,6 +10,11 @@
     <h1>Transaction Search Results</h1>
     <table>
       <tr>
+        <td>
+          <g:link url="[controller:'accounts',action:'handleSearch']">
+            List All Accounts
+          </g:link>
+        </td>        
         <td><g:link action="prepareAdd" params="[loanno: flash.loanno]">
             Add Transaction
             </g:link>
@@ -19,7 +24,6 @@
             Refresh
           </g:link>
         </td>
-        <td>&nbsp;</td>
         <td>&nbsp;</td>
         <td>Help</td>
       </tr>

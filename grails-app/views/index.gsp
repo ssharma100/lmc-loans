@@ -1,7 +1,7 @@
 <%@ page import="com.lmc.loan.domains.SimpleInterestLoan" %>
 <html>
   <head>
-    <title>Litespeed BHPH Loan Manager</title>
+    <title>Litespeed Loan Manager</title>
     <meta name="layout" content="main" />
 
     <script src="${resource(dir:'js',file:'SpryAssets/SpryTabbedPanels.js')}"></script>
