@@ -88,12 +88,12 @@
         <div class="TabbedPanelsContent">
           <p class="menuButton">Account Management</p>
           <p>&nbsp;</p>
-          <g:form name="acctSearchForm" url="[controller:'accounts',action:'handleSearch']" >
+          <g:form name="acctSearchForm" url="[controller:'accounts',action:'handleSearchAll']" >
             <table width="175" border="0">
               <tr>
                 <td>
-                   Click To View And Manage Accounts:
-                  <input type="submit" value="View" /> &nbsp;                  
+                   View All Accounts:
+                  <input type="submit" value="Go!" /> &nbsp;
                 </td>
               </tr>
             </table>

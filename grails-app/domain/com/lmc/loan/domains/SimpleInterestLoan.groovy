@@ -6,33 +6,31 @@ class SimpleInterestLoan {
     }
     
     static constraints = {
-        loanno (nullable: false, blank: false)
-        percentagerate (nullable: false, blank: false)
-        annualdays (nullable: false, blank: true, maxSize:365)
-        loanterm (nullable: false, blank: false, inList: [6, 12, 24, 36, 48, 60, 72])
-        payperiod (nullable: false, blank: false, inList: ["MONTHLY"])
-        amountdue (nullable: false, blank: false, scale: 2, maxSize: 2000)
-        dueday (nullable: false, blank:false, range: 1..31)
-        gracedays (nullable: false, blank: false, range: 1..30 )
-        latepenalty (nullable: false, blank: false, scale: 2, maxSize: 50)
+        percentageRate (nullable: false, blank: false)
+        annualDays (nullable: false, blank: true, maxSize:365)
+        loanTerm (nullable: false, blank: false, inList: [6, 12, 24, 36, 48, 60, 72])
+        payPeriod (nullable: false, blank: false, inList: ["MONTHLY"])
+        amountDue (nullable: false, blank: false, scale: 2, maxSize: 2000)
+        dueDay (nullable: false, blank:false, range: 1..31)
+        graceDays (nullable: false, blank: false, range: 1..30 )
+        latePenalty (nullable: false, blank: false, scale: 2, maxSize: 50)
         origAmount (nullable: false, blank: true, scale: 2, maxSize: 100000)
         prePaymentPenalty (nullable: false, blank:true, scale:2, maxSize: 10)
         
-        account (nullable: true)
+        siLoan (nullable: true)
         
     }
 
-    static belongsTo = [account:Accounts]
-    
-    int loanno
-    float percentagerate
-    int annualdays
-    int loanterm
-    float amountdue
-    int dueday
-    int gracedays
-    String payperiod
-    float latepenalty
+    static belongsTo = [siLoan:SimpleInterestLoan]
+   
+    float percentageRate
+    int annualDays
+    int loanTerm
+    float amountDue
+    int dueDay
+    int graceDays
+    String payPeriod
+    float latePenalty
     // Loan Origination Information
     float origAmount
     Date origDate

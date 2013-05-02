@@ -8,7 +8,8 @@ class Customer {
     static constraints = {
         address2 (nullable: true, blank: true)
         maintel (nullable: false, blank: false)
-        alttel (nullable:true, blank: true)
+        mobiletel (nullable:true, blank: true)
+        hometel   (nullable:true, blank: true)
         middle (nullable: true, blank: true)
         state (blank: false, minSize: 2, maxSize:2)
         zip4 (blank: false, minSize: 5, maxSize:5)
@@ -27,5 +28,6 @@ class Customer {
     String state
     String zip4
     String maintel
-    String alttel
+    String mobiletel
+    String hometel
 }

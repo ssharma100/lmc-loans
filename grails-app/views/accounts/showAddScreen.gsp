@@ -50,7 +50,7 @@
           </tr>
           <tr>
             <th colspan="2">
-              Statement/Billing Address
+              Billing Address
             </th>
             <td>
               &nbsp;
