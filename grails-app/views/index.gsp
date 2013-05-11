@@ -92,8 +92,15 @@
             <table width="175" border="0">
               <tr>
                 <td>
-                   View All Accounts:
-                  <input type="submit" value="Go!" /> &nbsp;
+                  <input type="submit" value="View All" /> &nbsp;
+                </td>
+                <td> OR </td>
+                <td>
+                  <table>
+                    <tr>
+                      <td class="queryHeader">Customer</td>
+                    </tr>
+                  </table>
                 </td>
               </tr>
             </table>
