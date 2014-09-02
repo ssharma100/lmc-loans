@@ -98,9 +98,7 @@
                 <option value="12">December</option>
               </select>
               <select name="paymentdate_year" id="paymentdate_year"  onchange="javascript:updateInterestDays()">
-                <option value="2012" selected="selected">2012</option>
-                <option value="2013">2013</option>
-                <option value="2014">2014</option>
+                <option value="2014" selected="selected">2014</option>
                 <option value="2015">2015</option>
                 <option value="2016">2016</option>
                 <option value="2017">2017</option>
