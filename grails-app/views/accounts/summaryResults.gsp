@@ -30,7 +30,7 @@
       <th style="width: 60px; text-align: center">Zip</th>
       <g:each var="account" in="${accountList}">
         <tr>
-          <td><g:link controller="Accounts" action="handleDetail"params="[id: account.id]">${account.customer.id}</g:link></td>
+          <td><g:link controller="Accounts" action="handleDetail" params="[id: account.id]">${account.customer.id}</g:link></td>
           <td><g:link controller="SimpleInterestLoan" action="handleDetail" params="[loanno: account.loanno]">${account.loanno}</g:link></td>
           <td>${account.customer.first}</td>
           <td>${account.customer.last}</td>

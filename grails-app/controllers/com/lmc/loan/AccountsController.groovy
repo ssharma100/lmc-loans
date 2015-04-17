@@ -6,7 +6,7 @@ class AccountsController {
     
     def handleSearch = {
         List accts = com.lmc.loan.domains.Accounts.list()
-        println ("Serach Results Found: " + accts.size())
+        println ("Search Results Found: " + accts.size())
         render(view: "summaryResults", model: [accountList: accts])
     }
     

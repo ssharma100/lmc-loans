@@ -12,7 +12,7 @@ class SimpleInterestLoanController {
         flash.paymentCount = trxs.size()
         def totalInterest = 0.00
         def totalPrincipal  = 0.00
-        // Total Relavant Information - Ony If Values Were Returned
+        // Total Relevant Information - Ony If Values Were Returned
         if (flash.paymentCount > 0) {
             trxs.each { trxItem ->
                 totalInterest = totalInterest + trxItem.interestdue
